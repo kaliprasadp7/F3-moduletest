@@ -22,16 +22,16 @@ btn.addEventListener("click", function () {
                     // console.log(val);
                     // address container update
                     address_container.innerHTML = `<div>
-                    <h3>Lat: ${lat}</h3>
-                    <h3>Long: ${long}</h3>
+                    <span><strong>Lat: </strong>${lat}</span>
+                    <span><strong>Long:</strong> ${long}</span>
                     </div>
                     <div>
-                    <h3>City: ${val.city}</h3>
-                    <h3>Region: ${val.region}</h3>
+                    <span><strong>City:</strong> ${val.city}</span>
+                    <span><strong>Region:</strong> ${val.region}</span>
                     </div>
                     <div>
-                    <h3>Organisation: ${val.org}</h3>
-                    <h3>Hostname: ${val.country}</h3>
+                    <span><strong>Organisation:</strong> ${val.org}</span>
+                    <span><strong>Hostname:</strong> ${val.country}</span>
                     </div>`;
 
                     //to show the datetime
@@ -39,9 +39,9 @@ btn.addEventListener("click", function () {
                     fetch(`https://api.postalpincode.in/pincode/${val.postal}`).then(response => response.json()).then(data =>{
 
                         //time zone container update
-                        timezone_container.innerHTML=`<h3>Time Zone: ${val.timezone}</h3>
-                        <h3>Time And Date: ${datetime_str}</h3>
-                        <h3>Pincode: ${val.postal}</h3>
+                        timezone_container.innerHTML=`<span><strong>Time Zone: </strong>${val.timezone}</span>
+                        <span><strong>Time And Date: </strong>${datetime_str}</span>
+                        <span><strong>Pincode: </strong>${val.postal}</span>
                         <span><strong>Message:</strong> ${data[0].Message}</span>`;
 
                         //post-office container
